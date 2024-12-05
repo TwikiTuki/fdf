@@ -1,9 +1,7 @@
 #include "fdf.h"
-#include <stdio.h>
 
 int	fdf_key_hook(int key, t_app *app)
 {
-	printf("key pressed: %i\n", key);
 	if (key == FDF_ESC)
 		fdf_exit_hook(app);
 	else if (key == FDF_ALT || key == FDF_SPACE || key == FDF_SHIFT
@@ -71,12 +69,12 @@ int	fdf_rotate_event(t_app *app, int key)
 int	fdf_translate_event(t_app *app, int key)
 {
 	if (key == FDF_RIGHT)
-		app->translation.x += 20;
-	if (key == FDF_LEFT)
 		app->translation.x -= 20;
+	if (key == FDF_LEFT)
+		app->translation.x += 20;
 	if (key == FDF_UP)
-		app->translation.y -= 20;
-	if (key == FDF_DOWN)
 		app->translation.y += 20;
+	if (key == FDF_DOWN)
+		app->translation.y -= 20;
 	return (0);
 }
