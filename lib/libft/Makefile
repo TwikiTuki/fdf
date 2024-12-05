@@ -7,7 +7,6 @@ clean:
 	make -C libft clean
 	make -C ft_printf clean
 	make -C get_next_line clean
-	rm -rf ./obj
 	
 fclean: clean
 	@-rm -f libft.a

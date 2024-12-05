@@ -29,7 +29,7 @@ int	main(int argc, char **argv)
 	}
 	if (!fdf_check_extension(argv[1], ".fdf"))
 	{
-		ft_printf("invalid file\n");
+		ft_printf("invalid file extension\n");
 		exit (0);
 	}
 	ft_printf("Starting app\n");

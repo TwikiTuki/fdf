@@ -105,12 +105,12 @@ int	fdf_check_extension(char *file, char *ext)
 	int		len_ext;
 
 	len_f = ft_strlen(file);
+	if (len_f == 0)
+		return (0);
 	len_ext = ft_strlen(ext);
-	while (--len_ext >= 0)
+	while (len_ext-- > 0)
 	{
-		if (len_f == 0)
-			return (0);
-		if (file[len_f] != ext[len_ext])
+		if (file[--len_f] != ext[len_ext])
 			return (0);
 	}
 	return (1);
