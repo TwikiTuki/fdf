@@ -25,8 +25,8 @@
 #  define FDF_WIN_VERTICAL_PADDING 0
 # endif
 
-# include "../minilibx_macos/mlx.h"
-# include "../libft/libft.h"
+# include "mlx.h"
+# include "libft.h"
 # include <stdio.h> //
 # include <unistd.h>
 # include <stdlib.h>

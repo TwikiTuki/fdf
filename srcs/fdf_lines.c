@@ -45,12 +45,10 @@ void	fdf_put_pixel(void *img_ptr, unsigned int x, unsigned int y, int color)
 
 void	fdf_draw_on_same_x(t_app *app, t_point p1, t_point p2, int clr)
 {
-	t_point	lst_p;	
 	t_point	cur_p;	
 
 	if (p1.y > p2.y)
 		fdf_swap_p(&p1, &p2);
-	lst_p = p1;
 	cur_p = p1;
 	while (cur_p.y <= p2.y)
 	{
