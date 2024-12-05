@@ -32,24 +32,31 @@
 # include <stdlib.h>
 # include <fcntl.h>
 
-# define FDF_A 0
-# define FDF_S 1
-# define FDF_D 2
-# define FDF_Z 6
-# define FDF_X 7
-# define FDF_C 8
-# define FDF_Y 16
-# define FDF_PLUS 69
-# define FDF_MINUS 78
-# define FDF_LESS 43
-# define FDF_MORE 47
-# define FDF_INTRO 76
-# define FDF_SPACE 49
+# define FDF_ESC 65307
+# define FDF_Q 113
+# define FDF_W 119
+# define FDF_E 101
+# define FDF_A 97
+# define FDF_S 115
+# define FDF_D 100
+# define FDF_Z 122
+# define FDF_X 120
+# define FDF_C 99
+# define FDF_PLUS 65451
+# define FDF_MINUS 65453
+# define FDF_LESS 43//
+# define FDF_MORE 47//
+# define FDF_INTRO 65293
 
-# define FDF_LEFT 123
-# define FDF_UP 126
-# define FDF_RIGHT 124
-# define FDF_DOWN 125
+# define FDF_ALT 65513
+# define FDF_SPACE 32
+# define FDF_SHIFT 65505
+# define FDF_CTRL 65507
+
+# define FDF_LEFT 65361
+# define FDF_UP 65362
+# define FDF_RIGHT 65363
+# define FDF_DOWN 65364
 
 # define X_TRANS 20
 # define Y_TRANS 20

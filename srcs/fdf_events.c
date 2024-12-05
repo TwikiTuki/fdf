@@ -1,26 +1,16 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   fdf_events.c                                       :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: jrenau-v <jrenau-v@student.42barcel>       +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/24 15:06:57 by jrenau-v          #+#    #+#             */
-/*   Updated: 2023/07/24 15:07:06 by jrenau-v         ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
 #include "fdf.h"
+#include <stdio.h>
 
 int	fdf_key_hook(int key, t_app *app)
 {
-	if (key == 53)
+	printf("key pressed: %i\n", key);
+	if (key == FDF_ESC)
 		fdf_exit_hook(app);
-	else if (key == FDF_PLUS || key == FDF_MINUS || key == FDF_MORE
-		|| key == FDF_LESS || key == FDF_INTRO || key == FDF_SPACE)
+	else if (key == FDF_ALT || key == FDF_SPACE || key == FDF_SHIFT
+		|| key == FDF_CTRL || key == FDF_Z || key == FDF_X)
 		fdf_zoom_event(app, key);
-	if (key == FDF_Y || key == FDF_A || key == FDF_S || key == FDF_D
-		|| key == FDF_Z || key == FDF_X || key == FDF_C)
+	if (key == FDF_Q || key == FDF_W || key == FDF_E
+		|| key == FDF_A || key == FDF_S || key == FDF_D)
 		fdf_rotate_event(app, key);
 	if (key == FDF_LEFT || key == FDF_RIGHT || key == FDF_UP || key == FDF_DOWN)
 		fdf_translate_event(app, key);
@@ -46,36 +36,34 @@ int	fdf_exit_hook(t_app *app)
 
 int	fdf_zoom_event(t_app *app, int key)
 {
-	if (key == FDF_PLUS)
+	if (key == FDF_SHIFT)
 		app->scale.y += 20;
-	if (key == FDF_MINUS)
+	if (key == FDF_CTRL)
 		app->scale.y -= 20;
-	if (key == FDF_MORE)
+	if (key == FDF_X)
 		app->scale.x += 20;
-	if (key == FDF_LESS)
+	if (key == FDF_Z)
 		app->scale.x -= 20;
-	if (key == FDF_INTRO)
-		app->scale.z += 20;
 	if (key == FDF_SPACE)
+		app->scale.z += 20;
+	if (key == FDF_ALT)
 		app->scale.z -= 20;
 	return (0);
 }
 
 int	fdf_rotate_event(t_app *app, int key)
 {
-	if (key == FDF_A)
+	if (key == FDF_E)
 		app->rotation.z += app->td.z_rotate;
-	if (key == FDF_Z)
+	if (key == FDF_Q)
 		app->rotation.z -= app->td.z_rotate;
-	if (key == FDF_S)
+	if (key == FDF_W)
 		app->rotation.x += app->td.x_rotate;
-	if (key == FDF_X)
+	if (key == FDF_S)
 		app->rotation.x -= app->td.x_rotate;
-	if (key == FDF_D)
+	if (key == FDF_A)
 		app->rotation.y += app->td.y_rotate;
-	if (key == FDF_C)
-		app->rotation.y -= app->td.y_rotate;
-	if (key == FDF_Y)
+	if (key == FDF_D)
 		app->rotation.y -= app->td.y_rotate;
 	return (0);
 }
