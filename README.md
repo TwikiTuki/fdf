@@ -7,6 +7,7 @@
 >    make
 >    ./fdf maps/pylone.fdf 
 >```
+> *This project was developed for linux, suport for other systems is not guaranteed*
 
 ## Constorls
 * **Move arround:** Arrow keys
